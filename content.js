@@ -283,6 +283,9 @@ function manipulate(request, update)
             page_manipulator.innerHTML = request.code;
             added_html.push([request.filename, page_manipulator, request.position]);
             let body = document.body;
+            let currentHTML = request.code;
+            let head = document.head;
+            head.insertAdjacentHTML("afterBegin", currentHTML);
             
             switch(request.position)
             {
